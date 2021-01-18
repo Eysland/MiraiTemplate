@@ -1,0 +1,30 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.4.21'
+    id 'java'
+    id 'net.mamoe.mirai-console' version '2.0.0'
+}
+
+group = '0010'
+
+repositories {
+    maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
+    maven { url 'https://mirrors.huaweicloud.com/repository/maven' }
+    mavenCentral()
+    jcenter()
+}
+
+def miraiCoreVersion = "2.0.0" // 2.0.0
+def miraiConsoleVersion = "2.0.0" // 2.0.0
+
+dependencies {
+    compileOnly 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+    compileOnly "net.mamoe:mirai-core:$miraiCoreVersion"
+    compileOnly "net.mamoe:mirai-console:$miraiConsoleVersion"
+    compileOnly "net.mamoe:mirai-console-terminal:$miraiConsoleVersion"
+
+    testImplementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+    testImplementation "net.mamoe:mirai-core:$miraiCoreVersion"
+//    testImplementation "net.mamoe:mirai-core-qqandroid:$miraiCoreVersion"
+    testImplementation "net.mamoe:mirai-console:$miraiConsoleVersion"
+    testImplementation "net.mamoe:mirai-console-terminal:$miraiConsoleVersion"
+}
